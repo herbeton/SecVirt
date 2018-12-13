@@ -35,14 +35,18 @@
 		<!-- Cria as tabelas do banco de dados -->
 		<!--<property name="hbm2ddl.auto">create</property>-->
 		
-		<!-- Atualiza as tabelas do banco de dados -->
+		<!-- Valida as tabelas do banco de dados -->
 		<property name="hbm2ddl.auto">validate</property>
+		
+		<!-- Atualiza as tabelas do banco de dados -->
+		<!--<property name="hbm2ddl.auto">update</property>-->
 		
 		<!-- Mapeando as tabelas no DB -->
 		<mapping class="br.com.secretariavirtual.domain.Cliente"/>
 		<mapping class="br.com.secretariavirtual.domain.Cidade"/>
 		<mapping class="br.com.secretariavirtual.domain.Estado"/>
 		<mapping class="br.com.secretariavirtual.domain.Fornecedor"/>
+		<mapping class="br.com.secretariavirtual.domain.Funcao"/>
 		<mapping class="br.com.secretariavirtual.domain.Funcionario"/>
 		<mapping class="br.com.secretariavirtual.domain.Historico"/>
 		<mapping class="br.com.secretariavirtual.domain.ItemVenda"/>
