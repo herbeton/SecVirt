@@ -9,14 +9,12 @@ import java.nio.file.Paths;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
-
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
 @ManagedBean
 @RequestScoped
-public class ImageBean {
+public class ImagemBean {
 	//o param eh da tag p:param
 	@ManagedProperty("#{param.caminho}")
 	private String caminho;
@@ -32,7 +30,7 @@ public class ImageBean {
 
 	public StreamedContent getFoto() throws IOException {
 		if(caminho == null || caminho.isEmpty()) {
-			Path path = Paths.get("C:/Users/Herbeton Bispo/git/SecretariaVirtual/SecretariaVirtual/uploads/branco.jpg");
+			Path path = Paths.get("C:/Users/Herbeton Bispo/git/SecretariaVirtual/uploads/branco.jpg");
 			InputStream stream = Files.newInputStream(path);
 			foto = new DefaultStreamedContent(stream);
 		}
