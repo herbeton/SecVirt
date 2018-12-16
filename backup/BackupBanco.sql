@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: financeiro
+-- Host: 127.0.0.1    Database: secretariavirtual
 -- ------------------------------------------------------
 -- Server version	5.7.21-log
 
@@ -71,6 +71,36 @@ INSERT INTO `cliente` VALUES (1,'2015-06-09','\0',2),(2,'2018-11-01','',3),(3,'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `endereco`
+--
+
+DROP TABLE IF EXISTS `endereco`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `endereco` (
+  `codigo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `bairro` varchar(100) NOT NULL,
+  `cep` varchar(9) DEFAULT NULL,
+  `complemento` varchar(100) DEFAULT NULL,
+  `logradouro` varchar(100) NOT NULL,
+  `numero` varchar(10) NOT NULL,
+  `rua` varchar(100) NOT NULL,
+  `cidade_codigo` bigint(20) NOT NULL,
+  `estado_codigo` bigint(20) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `endereco`
+--
+
+LOCK TABLES `endereco` WRITE;
+/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
+/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `estado`
 --
 
@@ -117,6 +147,31 @@ LOCK TABLES `fornecedor` WRITE;
 /*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
 INSERT INTO `fornecedor` VALUES (1,'Petrobras'),(2,'Navy Group'),(3,'COSERN');
 /*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `funcao`
+--
+
+DROP TABLE IF EXISTS `funcao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `funcao` (
+  `codigo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(50) NOT NULL,
+  `nome` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `funcao`
+--
+
+LOCK TABLES `funcao` WRITE;
+/*!40000 ALTER TABLE `funcao` DISABLE KEYS */;
+INSERT INTO `funcao` VALUES (1,'Pastor de Eucaliptos','Pastor'),(2,'','Novo');
+/*!40000 ALTER TABLE `funcao` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -340,4 +395,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-11  6:33:37
+-- Dump completed on 2018-12-15  5:30:58
