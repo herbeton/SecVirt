@@ -52,6 +52,7 @@
 		<mapping class="br.com.secretariavirtual.domain.ItemVenda"/>
 		<mapping class="br.com.secretariavirtual.domain.Pessoa"/>
 		<mapping class="br.com.secretariavirtual.domain.Produto"/>
+		<mapping class="br.com.secretariavirtual.domain.Setor"/>
 		<mapping class="br.com.secretariavirtual.domain.Usuario"/>
 		<mapping class="br.com.secretariavirtual.domain.Venda"/>
 				
