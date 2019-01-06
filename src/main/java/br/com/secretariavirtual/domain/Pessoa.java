@@ -17,6 +17,7 @@ public class Pessoa extends GenericDomain {
 	@Column(length = 12, nullable = false)
 	private String rg;
 	
+	//I-Endereco
 	@Column(length = 100, nullable = false)
 	private String rua;
 	
@@ -35,6 +36,7 @@ public class Pessoa extends GenericDomain {
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private Cidade cidade;
+	//F-Endereco
 	
 	@Column(length = 13, nullable = false)
 	private String telefone;
