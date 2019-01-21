@@ -1,6 +1,5 @@
 package br.com.secretariavirtual.bean;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.file.Files;
@@ -8,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,8 +24,10 @@ import org.primefaces.model.UploadedFile;
 
 import br.com.secretariavirtual.dao.FornecedorDAO;
 import br.com.secretariavirtual.dao.ProdutoDAO;
+import br.com.secretariavirtual.dao.UsuarioDAO;
 import br.com.secretariavirtual.domain.Fornecedor;
 import br.com.secretariavirtual.domain.Produto;
+import br.com.secretariavirtual.domain.Usuario;
 import br.com.secretariavirtual.util.HibernateUtil;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -41,6 +41,7 @@ public class ProdutoBean implements Serializable {
 	private Produto  produto;
 	private List<Produto> produtos;
 	private List<Fornecedor> fornecedor;
+	
 	
 	public Produto getProduto() {
 		return produto;
@@ -83,6 +84,7 @@ public class ProdutoBean implements Serializable {
 
 			FornecedorDAO fabricanteDAO = new FornecedorDAO();
 			fornecedor = fabricanteDAO.listar();
+			
 		} catch (RuntimeException erro) {
 			Messages.addFlashGlobalError("Ocorreu um erro ao tentar gerar um novo produto");
 			erro.printStackTrace();

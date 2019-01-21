@@ -44,6 +44,7 @@
 		<!-- Mapeando as tabelas no DB -->
 		<mapping class="br.com.secretariavirtual.domain.Cliente"/>
 		<mapping class="br.com.secretariavirtual.domain.Cidade"/>
+		<mapping class="br.com.secretariavirtual.domain.EntradaArquivo"/>
 		<mapping class="br.com.secretariavirtual.domain.Estado"/>
 		<mapping class="br.com.secretariavirtual.domain.Fornecedor"/>
 		<mapping class="br.com.secretariavirtual.domain.Funcao"/>
