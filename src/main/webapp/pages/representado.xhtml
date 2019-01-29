@@ -54,10 +54,14 @@ template="/templates/template.xhtml"
 			</p:panel>
 		</h:form>
 	
-		<p:dialog header="representado - Cadastro" widgetVar="dialogo"
-			draggable="false" resizable="false" global="true" closable="false">
+		<p:dialog header="Cadastro de Igrejas" widgetVar="dialogo"
+			draggable="false" resizable="false" global="true" closable="true">
 			<h:form id="formCadastro">
-				<h:panelGrid columns="2" id="pnCadastro">
+			<p:wizard >
+        <p:tab id="personal" title="Personal">
+            <p:panel header="Personal Details">
+                <p:messages />
+				<h:panelGrid columns="2" id="pnCadastro" columnClasses="label, value">
 					<p:outputLabel value="Nome:" />
 					<p:inputText maxlength="50" size="30" value="#{representadoBean.representado.nome}"
 					required="true" requiredMessage="O campo 'Nome' é obrigatório"/>
@@ -124,7 +128,13 @@ template="/templates/template.xhtml"
 						<f:selectItems value="#{representadoBean.setores}" var="setor"
 							itemValue="#{setor}" itemLabel="#{setor.nome}" />
 					</p:selectOneMenu>
-					
+					</h:panelGrid>
+				 </p:panel>
+       		</p:tab>
+					<p:tab id="address" title="Address">
+            <p:panel header="Address Details">
+                <p:messages />
+                <h:panelGrid columns="2" columnClasses="label, value">
 					<p:outputLabel for="estado" value="Estado:" />
 					<p:selectOneMenu id="estado" filter="true"
 						converter="omnifaces.SelectItemsConverter"
@@ -200,6 +210,10 @@ template="/templates/template.xhtml"
 					update=":mensagem :formCadastro:pnCadastro :formListagem:tabela"/>
 					<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
 				</h:panelGrid>
+				
+				 </p:panel>
+       		</p:tab>
+       		</p:wizard>
 			</h:form>
 		</p:dialog>
 	</ui:define>
