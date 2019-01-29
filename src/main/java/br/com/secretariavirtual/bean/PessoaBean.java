@@ -19,6 +19,7 @@ import br.com.secretariavirtual.domain.Cidade;
 import br.com.secretariavirtual.domain.Estado;
 import br.com.secretariavirtual.domain.Funcao;
 import br.com.secretariavirtual.domain.Pessoa;
+import br.com.secretariavirtual.domain.Representado;
 
 @SuppressWarnings("serial")
 @ManagedBean
@@ -93,6 +94,9 @@ public class PessoaBean implements Serializable {
 		try {
 			PessoaDAO pessoaDAO = new PessoaDAO();
 			pessoas = pessoaDAO.listar();
+			
+			FuncaoDAO funcaoDAO = new FuncaoDAO();
+			funcoes = funcaoDAO.listar("nome");
 		} catch (RuntimeException erro) {
 			Messages.addGlobalError("Ocorreu um erro ao tentar listar as pessoas");
 			erro.printStackTrace();
@@ -117,7 +121,16 @@ public class PessoaBean implements Serializable {
 	}
 
 	public void editar(ActionEvent evento) {
-
+		pessoa = (Pessoa) evento.getComponent().getAttributes().get("pessoaSelecionada");
+		
+		EstadoDAO estadoDAO = new EstadoDAO();
+		estados = estadoDAO.listar();
+		estado = pessoa.getCidade().getEstado();
+		popular();
+		
+		FuncaoDAO funcaoDAO = new FuncaoDAO();
+		funcoes = funcaoDAO.listar();
+		funcao = pessoa.getFuncao();
 	}
 
 	public void salvar() {
