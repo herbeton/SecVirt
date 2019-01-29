@@ -325,7 +325,7 @@ CREATE TABLE `pessoa` (
 
 LOCK TABLES `pessoa` WRITE;
 /*!40000 ALTER TABLE `pessoa` DISABLE KEYS */;
-INSERT INTO `pessoa` VALUES (1,'T','23423','443','234','777.777.777-77','4532rfr','Joao',3,'43243','Nova','4324',1,NULL),(2,'KKK','324','455','33423','4234','fdgdfg2','Maria',3,'4','Desc','324',1,NULL),(3,'Nova Parnamirim','(84)99903-6814','59.151-250','Ap406 B6','086.976.614-71','herbeton7@gmail.com','Herbeton Farias Bispo',2400,'00.268.136-5','Av Abel Cabral','(84)9990-3681',2,NULL),(4,'8','(88)88888-8888','88.888-888','8','888.888.888-88','88@gg.com','8',8,'88.888.888-8','8','(88)8888-8888',7,NULL);
+INSERT INTO `pessoa` VALUES (1,'T','23423','443','234','777.777.777-77','4532rfr','Joao',3,'43243','Nova','4324',1,NULL),(2,'KKK','324','455','33423','4234','fdgdfg2','Maria',3,'4','Desc','324',1,NULL),(3,'Nova Parnamirim','(84)99903-6814','59.151-250','Ap406 B6','086.976.614-71','herbeton7@gmail.com','Herbeton Farias Bispo',2400,'00.268.136-5','Av Abel Cabral','(84)9990-3681',2,NULL),(4,'8','(88)88888-8888','88.888-888','8','888.888.888-88','88@gg.com','8',8,'88.888.888-8','8','(88)8888-8888',7,1);
 /*!40000 ALTER TABLE `pessoa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -400,7 +400,7 @@ CREATE TABLE `representado` (
   CONSTRAINT `FK_ftg6bcr2e32opd17pppwh759w` FOREIGN KEY (`cidade_codigo`) REFERENCES `cidade` (`codigo`),
   CONSTRAINT `FK_gwq1oqunkhwxrw7x5hjgq8uew` FOREIGN KEY (`secretario_codigo`) REFERENCES `pessoa` (`codigo`),
   CONSTRAINT `FK_rox0icww2087axlv1bhs5xm9f` FOREIGN KEY (`primeirocopastor_codigo`) REFERENCES `pessoa` (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,7 +409,7 @@ CREATE TABLE `representado` (
 
 LOCK TABLES `representado` WRITE;
 /*!40000 ALTER TABLE `representado` DISABLE KEYS */;
-INSERT INTO `representado` VALUES (1,'1','(11)11111-1111','11.111-111','1','1','1',1,'1','1','(11)1111-1111','SCG',7,1,1,1,1,1,1);
+INSERT INTO `representado` VALUES (1,'1','(11)11111-1111','11.111-111','1','1','1',1,'1','1','(11)1111-1111','SCG',7,1,1,1,1,1,1),(2,'1','(11)11111-1111','11.111-111','1','11111111','Herbeton',1,'1','1','(11)1111-1111','CG',3,3,1,1,1,1,1),(3,'1','(11)11111-1111','11.111-111','1','1','2',1,'1','1','(11)1111-1111','SCG',7,4,4,4,4,4,1);
 /*!40000 ALTER TABLE `representado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,4 +510,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-29  3:32:38
+-- Dump completed on 2019-01-29  5:44:39
