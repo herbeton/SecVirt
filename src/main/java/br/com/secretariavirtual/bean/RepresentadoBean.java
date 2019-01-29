@@ -115,6 +115,19 @@ public class RepresentadoBean {
 
 	public void editar(ActionEvent evento) {
 		representado = (Representado) evento.getComponent().getAttributes().get("representadoSelecionado");
+		
+		PessoaDAO pessoaDAO = new PessoaDAO();
+		pessoas = pessoaDAO.listar();
+		RepresentadoDAO representadoDAO = new RepresentadoDAO();
+		representados = representadoDAO.listar();
+		SetorDAO setorDAO = new SetorDAO();
+		setores = setorDAO.listar();
+		EstadoDAO estadoDAO = new EstadoDAO();
+		estados = estadoDAO.listar();
+		
+		estado = representado.getCidade().getEstado();
+		popular();
+		
 	}
 
 	public void popular() {
