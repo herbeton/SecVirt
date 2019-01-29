@@ -13,9 +13,11 @@ import org.omnifaces.util.Messages;
 
 import br.com.secretariavirtual.dao.CidadeDAO;
 import br.com.secretariavirtual.dao.EstadoDAO;
+import br.com.secretariavirtual.dao.FuncaoDAO;
 import br.com.secretariavirtual.dao.PessoaDAO;
 import br.com.secretariavirtual.domain.Cidade;
 import br.com.secretariavirtual.domain.Estado;
+import br.com.secretariavirtual.domain.Funcao;
 import br.com.secretariavirtual.domain.Pessoa;
 
 @SuppressWarnings("serial")
@@ -27,6 +29,24 @@ public class PessoaBean implements Serializable {
 	private Estado estado;
 	private List<Estado> estados;
 	private List<Cidade> cidades;
+	private Funcao funcao;
+	private List<Funcao> funcoes;
+
+	public Funcao getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(Funcao funcao) {
+		this.funcao = funcao;
+	}
+
+	public List<Funcao> getFuncoes() {
+		return funcoes;
+	}
+
+	public void setFuncoes(List<Funcao> funcoes) {
+		this.funcoes = funcoes;
+	}
 
 	public Estado getEstado() {
 		return estado;
@@ -85,6 +105,9 @@ public class PessoaBean implements Serializable {
 
 			EstadoDAO estadoDAO = new EstadoDAO();
 			estados = estadoDAO.listar("nome");
+			
+			FuncaoDAO funcaoDAO = new FuncaoDAO();
+			funcoes = funcaoDAO.listar("nome");
 
 			cidades = new ArrayList<Cidade>();
 		} catch (RuntimeException erro) {
@@ -107,9 +130,14 @@ public class PessoaBean implements Serializable {
 			pessoa = new Pessoa();
 			
 			estado = new Estado();
+			
+			funcao = new Funcao();
 
 			EstadoDAO estadoDAO = new EstadoDAO();
 			estados = estadoDAO.listar("nome");
+			
+			FuncaoDAO funcaoDAO = new FuncaoDAO();
+			funcoes = funcaoDAO.listar("nome");
 
 			cidades = new ArrayList<>();
 		} catch (RuntimeException erro) {

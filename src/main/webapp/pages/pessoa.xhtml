@@ -81,6 +81,17 @@ template="/templates/template.xhtml">
 					<p:inputMask id="cpf" mask="999.999.999-99" size="10"
 						value="#{pessoaBean.pessoa.cpf}" required="true"
 						requiredMessage="O campo 'CPF' é obrigatório" />
+						
+					<p:outputLabel for="funcao" value="Função:" />
+					<p:selectOneMenu id="funcao" filter="true"
+						converter="omnifaces.SelectItemsConverter"
+						value="#{pessoaBean.funcao}">
+						<f:selectItem noSelectionOption="true"
+							itemLabel="Selecione uma função" />
+						<f:selectItems value="#{pessoaBean.funcoes}" var="funcao"
+							itemValue="#{estado}" itemLabel="#{funcao.nome}" />
+						<p:ajax listener="#{pessoaBean.popular}" update=":formCadastro:cidade" />
+					</p:selectOneMenu>
 	
 					<p:outputLabel for="estado" value="Estado:" />
 					<p:selectOneMenu id="estado" filter="true"

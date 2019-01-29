@@ -38,6 +38,10 @@ public class Pessoa extends GenericDomain {
 	private Cidade cidade;
 	//F-Endereco
 	
+	@ManyToOne
+	@JoinColumn(nullable = true)
+	private Funcao funcao;
+	
 	@Column(length = 13, nullable = false)
 	private String telefone;
 
@@ -141,5 +145,13 @@ public class Pessoa extends GenericDomain {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Funcao getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(Funcao funcao) {
+		this.funcao = funcao;
 	}
 }
