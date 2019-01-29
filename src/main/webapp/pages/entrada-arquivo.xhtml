@@ -31,9 +31,9 @@ template="/templates/template.xhtml">
 						<h:outputText value="#{entradaArquivo.nome}" />
 					</p:column>
 	
-					<p:column headerText="Fornecedor" filterBy="#{entradaArquivo.nome}"
+					<p:column headerText="Usuario" filterBy="#{entradaArquivo.usuario.pessoa.nome}"
 					filterMatchMode="contains"
-						sortBy="#{entradaArquivo.nome}">
+						sortBy="#{entradaArquivo.usuario.pessoa.nome}">
 						<h:outputText value="#{entradaArquivo.usuario.pessoa.nome}" />
 					</p:column>
 	
@@ -42,7 +42,7 @@ template="/templates/template.xhtml">
 							actionListener="#{entradaArquivoBean.excluir}"
 							update=":mensagem :formListagem:tabela">
 							<p:confirm header="Confirmação"
-								message="Deseja excluir o produto?" icon="ui-icon-alert" />
+								message="Deseja excluir a entrada?" icon="ui-icon-alert" />
 							<f:attribute name="EntradaArquivoSelecionado" value="#{entradaArquivo}" />
 						</p:commandButton>
 	
@@ -74,7 +74,7 @@ template="/templates/template.xhtml">
 			</p:panel>
 		</h:form>
 	
-		<p:dialog header="Produtos - Cadastro" widgetVar="dialogo"
+		<p:dialog header="Entradas - Cadastro" widgetVar="dialogo"
 			draggable="true" resizable="false" global="true" closable="false">
 			<h:form id="formCadastro" enctype="multipart/form-data">
 				<h:panelGrid id="painel" columns="2">

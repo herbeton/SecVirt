@@ -5,9 +5,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-	
-<ui:insert name="metadata" />	
-	
+
+<ui:insert name="metadata" />
+
 <h:head>
 
 	<h:outputStylesheet library="css" name="estilo.css" />
@@ -15,15 +15,13 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Secretaria Virtual</title>
+
+
 </h:head>
 <h:body>
-
-<p:growl id="mensagem"/>
+	<p:growl id="mensagem" />
 
 	<p:layout fullPage="true">
-
-		
-
 
 		<p:layoutUnit position="west" size="200" resizable="false"
 			closable="false" collapsible="false">
@@ -32,27 +30,24 @@
 				<p:panelMenu>
 
 					<p:submenu label="Arquivo">
-						<p:menuitem value="Principal"  outcome="/pages/principal.xhtml" />
+						<p:menuitem value="Principal" outcome="/pages/principal.xhtml" />
 						<p:menuitem value="Sair" />
 					</p:submenu>
 
-					<p:submenu label="Cadastros" rendered="#{autenticacaoBean.temPermissoes(['A', 'G'])}">
-						<p:menuitem value="Cidades" outcome="/pages/cidade.xhtml"/>
-						<p:menuitem value="Estados" outcome="/pages/estado.xhtml"/>
-						<p:menuitem value="Funções" outcome="/pages/funcao.xhtml"/>
-						<p:menuitem value="Igrejas" outcome="/pages/representado.xhtml"/>
-						<p:menuitem value="Pessoas" outcome="/pages/pessoa.xhtml"/>
-						<p:menuitem value="Produtos" outcome="/pages/produto.xhtml" />
-						<p:menuitem value="Setores"  outcome="/pages/setor.xhtml"/>
-						<p:menuitem value="Usuarios" outcome="/pages/usuario.xhtml"/>
+					<p:submenu label="Cadastros"
+						rendered="#{autenticacaoBean.temPermissoes(['A', 'G'])}">
+						<p:menuitem value="Cidades" outcome="/pages/cidade.xhtml" />
+						<p:menuitem value="Estados" outcome="/pages/estado.xhtml" />
+						<p:menuitem value="Funções" outcome="/pages/funcao.xhtml" />
+						<p:menuitem value="Igrejas" outcome="/pages/representado.xhtml" />
+						<p:menuitem value="Pessoas" outcome="/pages/pessoa.xhtml" />
+						<p:menuitem value="Setores" outcome="/pages/setor.xhtml" />
+						<p:menuitem value="Usuarios" outcome="/pages/usuario.xhtml" />
 					</p:submenu>
-					
-					<p:submenu label="Consultas"  >
-						<p:menuitem value="Produtos" outcome="/pages/produtosconsulta.xhtml" />
-					</p:submenu>
-					
-					<p:submenu label="Entradas"  >
-						<p:menuitem value="Entradas de Arquivos" outcome="/pages/entrada-arquivo.xhtml" />
+
+					<p:submenu label="Entradas">
+						<p:menuitem value="Entradas de Arquivos"
+							outcome="/pages/entrada-arquivo.xhtml" />
 					</p:submenu>
 
 					<p:submenu label="Ajuda">
@@ -60,7 +55,7 @@
 
 				</p:panelMenu>
 			</h:form>
-			
+
 
 		</p:layoutUnit>
 

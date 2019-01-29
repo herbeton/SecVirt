@@ -86,7 +86,7 @@ public class EntradaArquivoBean implements Serializable {
 			EntradaArquivoDAO EntradaArquivoDAO = new EntradaArquivoDAO();
 			EntradaArquivos = EntradaArquivoDAO.listar();
 		} catch (RuntimeException erro) {
-			Messages.addGlobalError("Ocorreu um erro ao tentar listar os EntradaArquivos");
+			Messages.addGlobalError("Ocorreu um erro ao tentar listar as Entradas");
 			erro.printStackTrace();
 		}
 	}
@@ -101,7 +101,7 @@ public class EntradaArquivoBean implements Serializable {
 			UsuarioDAO usuarioDAO = new UsuarioDAO();
 			usuarios = usuarioDAO.listar();
 		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar gerar um novo EntradaArquivo");
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar gerar uma nova Entrada");
 			erro.printStackTrace();
 		}
 	}
@@ -118,7 +118,7 @@ public class EntradaArquivoBean implements Serializable {
 			FornecedorDAO fornecedorDAO = new FornecedorDAO();
 			fornecedor = fornecedorDAO.listar();
 		} catch (RuntimeException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um EntradaArquivo");
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar selecionar um Entrada");
 			erro.printStackTrace();
 		}	
 	}
@@ -148,7 +148,7 @@ public class EntradaArquivoBean implements Serializable {
 
 			Messages.addGlobalInfo("EntradaArquivo salvo com sucesso");
 		} catch (RuntimeException | IOException erro) {
-			Messages.addFlashGlobalError("Ocorreu um erro ao tentar salvar o EntradaArquivo");
+			Messages.addFlashGlobalError("Ocorreu um erro ao tentar salvar a Entrada");
 			erro.printStackTrace();
 		}
 	}
@@ -168,7 +168,7 @@ public class EntradaArquivoBean implements Serializable {
 
 			Messages.addGlobalInfo("EntradaArquivo removido com sucesso");
 		} catch (RuntimeException | IOException erro) {
-			Messages.addFlashGlobalInfo("Ocorreu um erro ao tentar remover o EntradaArquivo");
+			Messages.addFlashGlobalInfo("Ocorreu um erro ao tentar remover a Entrada");
 			erro.printStackTrace();
 		}
 	}
